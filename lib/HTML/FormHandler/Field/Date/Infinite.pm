@@ -3,7 +3,7 @@ package HTML::FormHandler::Field::Date::Infinite;
 use Moose;
 extends 'HTML::FormHandler::Field::Date';
 
-use version; our $VERSION = qv('0.0.1');
+use version; our $VERSION = qv('0.1.0');
 
 override 'date_deflate' => sub {
 
