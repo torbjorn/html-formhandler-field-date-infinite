@@ -23,8 +23,8 @@ override 'validate' => sub {
 
     my $self = shift;
 
-    if ( $self->value =~ /^(-?)inf(?:inite)$/i) {
-        return $self->_set_value( $1 ? DateTime::Infinite::Past->new : DateTime::Infinite::Future->new );
+    if ( $self->value =~ /^(-?inf)(?:init[ey])?$/i) {
+        return $self->_set_value( $1 eq "-inf" ? DateTime::Infinite::Past->new : DateTime::Infinite::Future->new );
     }
     else {
         return super();
@@ -32,14 +32,23 @@ override 'validate' => sub {
 
 };
 
+__PACKAGE__->meta->make_immutable;
+use namespace::autoclean;
+
 1; # Magic true value required at end of module
 __END__
 
 =head1 NAME
 
 HTML::FormHandler::Field::Date::Infinite - Subclass of
-HTML::FormHandler::Field::Date that supports Infinite and -Infinite.
+HTML::FormHandler::Field::Date that supports DateTime::Infinite.
 
+Valid input strings are:
+
+-inf
+inf
+-infinit[ey]
+infinit[ey]
 
 =head1 VERSION
 

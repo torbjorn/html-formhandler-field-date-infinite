@@ -4,7 +4,7 @@ use Module::Build;
 
 my $builder = Module::Build->new(
     module_name         => 'HTML::FormHandler::Field::Date::Infinite',
-    license             => 'artistic2',
+    license             => 'artistic_2',
     dist_author         => 'Torbjørn Lindahl <torbjorn.lindahl@gmail.com>',
     dist_version_from   => 'lib/HTML/FormHandler/Field/Date/Infinite.pm',
     requires => {
