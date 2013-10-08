@@ -22,8 +22,13 @@ Alternatively, to install with Module::Build, you can use the following commands
 
 DEPENDENCIES
 
-None.
-
+DateTime
+Moose
+Test::FailWarnings
+Test::Most
+Test::Perl::Critic
+Test::Pod
+Test::Pod::Coverage
 
 COPYRIGHT AND LICENCE
 
