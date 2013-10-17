@@ -9,7 +9,7 @@ override 'date_deflate' => sub {
 
     my ( $self, $value ) = @_;
 
-    if ($value->isa("DateTime::Infinite")) {
+    if ($value->is_infinite) {
         ## plain stringification
         return "$value"
     }
@@ -24,7 +24,7 @@ override 'validate' => sub {
     my $self = shift;
 
     if ( $self->value =~ /^(-?inf)(?:init[ey])?$/i) {
-        return $self->_set_value( $1 eq "-inf" ? DateTime::Infinite::Past->new : DateTime::Infinite::Future->new );
+        return $self->_set_value( lc $1 eq "-inf" ? DateTime::Infinite::Past->new : DateTime::Infinite::Future->new );
     }
     else {
         return super();
