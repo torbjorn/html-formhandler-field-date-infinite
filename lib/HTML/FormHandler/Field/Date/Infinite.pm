@@ -5,16 +5,23 @@ extends 'HTML::FormHandler::Field::Date';
 
 use version; our $VERSION = qv('0.1.0');
 
-override 'date_deflate' => sub {
+has 'deflate_method' => ( default => sub { \&my_date_deflate } );
+
+sub my_date_deflate {
 
     my ( $self, $value ) = @_;
 
     if ($value->is_infinite) {
         ## plain stringification
-        return "$value"
+        if ( $value->isa("DateTime::Infinite::Future")) {
+            return "infinity";
+        }
+        else {
+            return "-infinity";
+        }
     }
     else {
-        return super();
+        return HTML::FormHandler::Field::Date::date_deflate($self,$value);
     }
 
 };
