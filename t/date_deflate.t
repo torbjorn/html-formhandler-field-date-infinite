@@ -6,11 +6,7 @@ use Test::Most;
 # use Test::FailWarnings;
 use DateTime;
 
-use lib '/home/lindahl/git/html-formhandler/lib';
-
 use_ok( "HTML::FormHandler::Field::Date::Infinite" );
-
-# note( "::Date is " . $INC{"HTML/FormHandler/Field/Date.pm"});
 
 note( "Testing a normal DT" );
 
