@@ -1,4 +1,4 @@
-HTML-FormHandler-Field-Date-Infinite version 0.0.1
+HTML-FormHandler-Field-Date-Infinite version 0.1.1
 ==================================================
 
 perl module HTML::FormHandler::Field::Date::Infinite that adds support for Infinite and -Infinite to HF's Date fields.

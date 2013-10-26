@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use Test::Most;
-# use Test::FailWarnings;
+use Test::FailWarnings;
 use DateTime;
 
 use_ok( "HTML::FormHandler::Field::Date::Infinite" );

@@ -3,9 +3,10 @@ package HTML::FormHandler::Field::Date::Infinite;
 use Moose;
 extends 'HTML::FormHandler::Field::Date';
 
-use version; our $VERSION = qv('0.1.0');
+use version; our $VERSION = qv('0.1.1');
 
-has 'deflate_method' => ( default => sub { \&my_date_deflate } );
+has 'deflate_method' => ( is => "ro",
+                          default => sub { \&my_date_deflate } );
 
 sub my_date_deflate {
 
