@@ -31,7 +31,7 @@ override 'validate' => sub {
 
     my $self = shift;
 
-    if ( $self->value =~ /^(-?inf)(?:init[ey])?$/i) {
+    if ( $self->value and $self->value =~ /^(-?inf)(?:init[ey])?$/i) {
         return $self->_set_value( lc $1 eq "-inf" ? DateTime::Infinite::Past->new : DateTime::Infinite::Future->new );
     }
     else {

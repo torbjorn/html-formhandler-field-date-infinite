@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use Test::Most;
-use Test::FailWarnings;
+use Test::Warnings;
 use DateTime;
 
 use_ok( "HTML::FormHandler::Field::Date::Infinite" );
@@ -16,7 +16,8 @@ my $field = new_ok( "HTML::FormHandler::Field::Date::Infinite",
 lives_ok sub { $field->build_result },
     "build_result succeeds";
 
-lives_ok sub { $field->_set_input( "2013-01-01" ) }, "input can be set";
+lives_ok sub { $field->_set_input( "2013-01-01" ) },
+    "input can be set";
 
 ok( $field->validate_field, "default date format passes" );
 isa_ok( $field->value, "DateTime", "value is a DateTime" );
