@@ -8,11 +8,12 @@ my $builder = Module::Build->new(
     dist_author         => 'Torbjørn Lindahl <torbjorn.lindahl@gmail.com>',
     dist_version_from   => 'lib/HTML/FormHandler/Field/Date/Infinite.pm',
     requires => {
-        'DateTime'             => '1.06',
-        'Moose'                => '2.1005',
-        'Test::Warnings'       => '0.010',
-        'Test::Most'           => '0.34',
-        'namespace::autoclean' => '0.13',
+        'HTML::FormHandler::Field::Date' => '0.03',
+        'DateTime'                       => '1.06',
+        'Moose'                          => '2.1005',
+        'Test::Warnings'                 => '0.010',
+        'Test::Most'                     => '0.34',
+        'namespace::autoclean'           => '0.13',
     },
     add_to_cleanup      => [ 'HTML-FormHandler-Field-Date-Infinite-*' ],
 );
