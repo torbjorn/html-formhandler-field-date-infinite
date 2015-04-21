@@ -46,6 +46,8 @@ use namespace::autoclean;
 1; # Magic true value required at end of module
 __END__
 
+=encoding utf8
+
 =head1 NAME
 
 HTML::FormHandler::Field::Date::Infinite - Subclass of
@@ -60,8 +62,7 @@ infinit[ey]
 
 =head1 VERSION
 
-This document describes HTML::FormHandler::Field::Date::Infinite version 0.0.1
-
+This document describes HTML::FormHandler::Field::Date::Infinite version 0.1.3
 
 =head1 SYNOPSIS
 
