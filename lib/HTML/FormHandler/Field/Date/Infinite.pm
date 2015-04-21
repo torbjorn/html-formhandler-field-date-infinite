@@ -6,9 +6,9 @@ extends 'HTML::FormHandler::Field::Date';
 use version; our $VERSION = qv('0.1.3');
 
 has 'deflate_method' => ( is => "ro",
-                          default => sub { \&my_date_deflate } );
+                          default => sub { \&_my_date_deflate } );
 
-sub my_date_deflate {
+sub _my_date_deflate {
 
     my ( $self, $value ) = @_;
 
